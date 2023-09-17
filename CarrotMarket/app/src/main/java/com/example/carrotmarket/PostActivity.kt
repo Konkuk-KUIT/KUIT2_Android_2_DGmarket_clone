@@ -53,6 +53,6 @@ class PostActivity : AppCompatActivity() {
 
 
     private fun initTopAppBar(){
-
+        //추가 깃 확인을 위해 한 줄 작성합니다.
     }
 }
