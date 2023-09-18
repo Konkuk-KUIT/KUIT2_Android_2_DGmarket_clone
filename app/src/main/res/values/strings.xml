@@ -30,4 +30,11 @@
     네고 절대 사절 \n</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_notify">알림</string>
+    <string name="title_edit">편집</string>
+    <string name="activity_notify">활동 알림</string>
+    <string name="keyword_notify">키워드 알림</string>
+    <string name="activity_notify_intro">노나노나님, 아직 당근마켓 새 이름을 모르시나요?</string>
+    <string name="activity_notify_middle">새로워진 당근마켓의 OO을 알아보세요</string>
+    <string name="activity_notify_date">6일전</string>
 </resources>
