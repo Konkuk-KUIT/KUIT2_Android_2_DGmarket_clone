@@ -36,7 +36,7 @@
                 android:src="@drawable/tab_icon_home_n"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_alarm_previous_arrow"/>
+                app:layout_constraintStart_toEndOf="@id/tv_info_previous_arrow"/>
 
             <ImageView
                 android:id="@+id/iv_home_alarm"
