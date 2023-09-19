@@ -1,24 +1,25 @@
 package com.example.carrotmarket
 
-import android.R
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.example.carrotmarket.databinding.ActivityPostBinding
+import com.example.carrotmarket.databinding.ActivityStuffinfoBinding
 
 
-class PostActivity : AppCompatActivity() {
-    lateinit var binding : ActivityPostBinding
+class StuffInfoActivity : AppCompatActivity() {
+    lateinit var binding : ActivityStuffinfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPostBinding.inflate(layoutInflater)
+        binding = ActivityStuffinfoBinding.inflate(layoutInflater)
 
         init()
         initStatusBar()
-        initTopAppBar()
+
+        binding.ivBackHome.setOnClickListener{
+            finish()
+        }
         setContentView(binding.root)
     }
 
@@ -45,14 +46,10 @@ class PostActivity : AppCompatActivity() {
     private fun initStatusBar(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window = window
-            window.statusBarColor = Color.BLUE
-            //window.statusBarColor = Color.TRANSPARENT
+            //window.statusBarColor = Color.BLUE
+            window.statusBarColor = Color.TRANSPARENT
 
         }
     }
 
-
-    private fun initTopAppBar(){
-        //추가 깃 확인을 위해 한 줄 작성합니다.
-    }
 }

@@ -16,13 +16,23 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
-        init()
+        initStuffInfo()
+        initAlarm()
+
         return binding.root
     }
 
-    private fun init(){
+    private fun initStuffInfo(){
         binding.clItem1.setOnClickListener{
-            val intent = Intent(requireActivity(), PostActivity::class.java)
+            val intent = Intent(requireActivity(), StuffInfoActivity::class.java)
+            startActivity(intent)
+        }
+
+    }
+
+    private fun initAlarm(){
+        binding.ivHomeAlarm.setOnClickListener {
+            val intent = Intent(requireActivity(),AlarmActivity::class.java)
             startActivity(intent)
         }
     }
