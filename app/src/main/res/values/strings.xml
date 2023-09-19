@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Carrot_Market</string>
+    <string name="menu_home">홈</string>
+    <string name="menu_townlife">동네생활</string>
+    <string name="menu_nearby">내 근처</string>
+    <string name="menu_chatting">채팅</string>
+    <string name="menu_my">나의 당근</string>
+    <string name="announce_detail"><u>디지털 기기</u> * 끌올 3일전</string>
+    <string name="announce_spec">cpu:i5/9400f\n
+    그래픽 카드 : gtx1660ti\n
+    램 : 삼성 8gb x2 16GB\n
+    메인보드 : 프라임 b365M-k\n
+    ssd : 256gb\n
+    파워 : 550w 정격\n
+    디아4, 롤, 로아 배그 게임 잘 돌아갑니다.\n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n
+    네고 절대 사절 \n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_notify">알림</string>
+    <string name="title_edit">편집</string>
+    <string name="activity_notify">활동 알림</string>
+    <string name="keyword_notify">키워드 알림</string>
+    <string name="activity_notify_intro">노나노나님, 아직 당근마켓 새 이름을 모르시나요?</string>
+    <string name="activity_notify_middle">새로워진 당근마켓의 OO을 알아보세요</string>
+    <string name="activity_notify_date">6일전</string>
+</resources>
