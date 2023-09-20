@@ -1,5 +1,6 @@
 package com.example.carrotmarket
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        //기능추가, 알람
+        binding.clItem1.setOnClickListener{
+            var intent=Intent(requireContext(),StuffInfoActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.ivHomeAlarm.setOnClickListener {
+            var intent=Intent(requireContext(),AlarmActivity::class.java)
+            startActivity(intent)
+        }
+
         return binding.root
     }
 
