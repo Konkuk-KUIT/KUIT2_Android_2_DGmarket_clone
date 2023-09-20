@@ -4,6 +4,8 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.widget.NestedScrollView
 import com.example.carrotmarket.databinding.ActivityStuffinfoBinding
 
 
@@ -16,6 +18,7 @@ class StuffInfoActivity : AppCompatActivity() {
 
         init()
         initStatusBar()
+        initScrollView()
 
         binding.ivBackHome.setOnClickListener{
             finish()
@@ -52,4 +55,13 @@ class StuffInfoActivity : AppCompatActivity() {
         }
     }
 
+    private fun initScrollView(){
+        binding.svStuffInfo.setOnScrollChangeListener { _: NestedScrollView?, _:Int, scrollY: Int, _: Int, _: Int ->
+            if(scrollY > 0){
+                window.statusBarColor = ContextCompat.getColor(this,R.color.gray_700)
+            }else{
+                window.statusBarColor = Color.TRANSPARENT
+            }
+        }
+    }
 }
