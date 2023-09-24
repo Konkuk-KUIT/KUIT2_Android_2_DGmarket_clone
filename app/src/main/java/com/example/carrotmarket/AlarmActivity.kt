@@ -1,6 +1,7 @@
 package com.example.carrotmarket
 
 import android.opengl.Visibility
+import android.os.Build.VERSION_CODES.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,8 +16,9 @@ class AlarmActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAlarmBinding.inflate(layoutInflater)
 
-        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,NotifyFragment())
-
+        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,NotifyFragment()).commit()
+        // replace() 인자값은 int형으로 넣어야하기 때문에 r.id.id값으로 넣어야함
+        // view 객체를 가져오기 때문에 형이 맞지 않음 -> r.id.으로 구현
         binding.ivBackHome.setOnClickListener {
             initBackHome()
         }
@@ -36,13 +38,13 @@ class AlarmActivity : AppCompatActivity() {
     }
 
     private fun initActivity(){
-        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,NotifyFragment())
+        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,NotifyFragment()).commit()
         binding.viewLine1.visibility = View.VISIBLE
         binding.viewLine2.visibility = View.INVISIBLE
     }
 
     private fun initKeyWord(){
-        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,KeyWordFragment())
+        supportFragmentManager.beginTransaction().replace(R.id.fl_notify_contents,KeyWordFragment()).commit()
         binding.viewLine1.visibility = View.INVISIBLE
         binding.viewLine2.visibility = View.VISIBLE
     }
