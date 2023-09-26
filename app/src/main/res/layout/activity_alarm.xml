@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -148,9 +149,7 @@
                 android:id="@+id/iv_item_alarm_thumbnail_1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
-
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -213,7 +212,6 @@
                 android:id="@+id/iv_item_alarm_thumbnail_2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -278,7 +276,6 @@
                 android:id="@+id/iv_item_alarm_thumbnail_3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -343,7 +340,6 @@
                 android:id="@+id/iv_item_alarm_thumbnail_4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -408,7 +404,6 @@
                 android:id="@+id/iv_item_alarm_thumbnail_5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -473,7 +468,6 @@
                 android:id="@+id/iv_item_alarm_thumbnail_6"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:elevation="0dp"
                 app:cardCornerRadius="100dp"
 
                 app:layout_constraintStart_toStartOf="parent"
