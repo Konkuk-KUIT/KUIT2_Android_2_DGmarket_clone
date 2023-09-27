@@ -188,8 +188,14 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dcdcdc"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item_1"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -299,11 +305,45 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dcdcdc"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item_2"/>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/writeplus"
+        android:layout_width="90dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rectangle1"
+        android:backgroundTint="#ff8c00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp">
 
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_floating_plus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="13dp"
+            />
 
+        <TextView
+            android:layout_width="39dp"
+            android:layout_height="17dp"
+            android:text="글쓰기"
+            android:textColor="@color/white"
+            android:backgroundTint="#ff8c00"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="19dp"
+            />
 
-
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
