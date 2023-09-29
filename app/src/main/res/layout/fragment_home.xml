@@ -29,6 +29,7 @@
             android:id="@+id/iv_region_arrow"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginStart="10dp"
             android:src="@drawable/ic_expand_more_outline_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
