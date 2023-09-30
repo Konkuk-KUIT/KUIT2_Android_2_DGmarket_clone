@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray_line">#F3F3F5</color>
     <color name="gray_100">#F5F5F5</color>
     <color name="gray_200">#EEEEEE</color>
     <color name="gray_300">#D5D5D5</color>
@@ -11,4 +12,5 @@
     <color name="gray_700">#616161</color>
     <color name="gray_800">#424242</color>
     <color name="gray_900">#111111</color>
+    <color name="orange">#FF6F0F</color>
 </resources>

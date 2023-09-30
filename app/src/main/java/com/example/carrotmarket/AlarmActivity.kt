@@ -15,5 +15,7 @@ class AlarmActivity : AppCompatActivity() {
         binding.ivAlarmBack.setOnClickListener {
             finish()
         }
+
+        supportFragmentManager.beginTransaction().replace(R.id.frm_alarm_list,ActiveAlarmFragment()).commit()
     }
 }
