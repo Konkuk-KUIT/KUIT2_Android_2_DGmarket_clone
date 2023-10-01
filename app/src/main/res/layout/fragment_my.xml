@@ -1,16 +1,405 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="내 당근"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_left"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="14dp"
+            />
+        
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_right"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="14dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/ic_mydaangn_setting_outline_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/iv_user_profile_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:backgroundTint="#AAAAAA"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="니나노니나"
+            android:fontFamily="@font/interbold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@+id/iv_user_profile_image"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_image"
+            app:layout_constraintStart_toEndOf="@+id/iv_user_profile_image"
+            android:layout_marginStart="11dp"/>
+
+        <RelativeLayout
+            android:id="@+id/frame_64"
+            android:layout_width="80dp"
+            android:layout_height="29dp"
+            android:clipToOutline="true"
+            android:layout_marginTop="61dp"
+            android:gravity="center"
+            android:background="@drawable/frame_64"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guide_right">
+
+            <TextView
+                android:id="@+id/tv_profile"
+                android:layout_width="54dp"
+                android:layout_height="13dp"
+                android:text="프로필 보기"
+                android:fontFamily="@font/interbold"
+                android:textAppearance="@style/tv_profile"
+                android:gravity="top"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/rectangle_31"
+            android:layout_width="0dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/rectangle_31"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintEnd_toEndOf="@+id/guide_right"
+            app:layout_constraintTop_toBottomOf="@+id/iv_user_profile_image"/>
+
+        <View
+            android:id="@+id/onboarding_"
+            android:layout_width="56dp"
+            android:layout_height="14dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            android:layout_marginTop="142dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/onboarding_logo"/>
+
+        <TextView
+            android:id="@+id/tv_daangn_pay"
+            android:layout_width="174dp"
+            android:layout_height="16dp"
+            android:fontFamily="@font/interregular"
+            android:text="@string/tv_daangn_pay"
+            android:textAppearance="@style/tv_daangn_pay"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/onboarding_"
+            app:layout_constraintTop_toTopOf="@id/onboarding_"
+            app:layout_constraintBottom_toBottomOf="@+id/onboarding_"
+            android:layout_marginLeft="14dp" />
+
+        <RelativeLayout
+            android:id="@+id/rectangle_32_left"
+            android:layout_width="120dp"
+            android:layout_height="33dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="58dp"
+            android:gravity="center"
+            android:background="@drawable/rectangle_32"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_31">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_charge"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/tab_icon_write_gb_n"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_charge"
+                    android:layout_width="24dp"
+                    android:layout_height="15dp"
+                    android:text="@string/tv_charge"
+                    android:layout_marginTop="1dp"
+                    android:gravity="bottom"
+                    android:textAppearance="@style/tv_charge"
+                    app:layout_constraintStart_toEndOf="@+id/icon_charge"
+                    app:layout_constraintTop_toTopOf="@+id/icon_charge"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_charge"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rectangle_32_right"
+            android:layout_width="120dp"
+            android:layout_height="33dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="58dp"
+            android:gravity="center"
+            android:background="@drawable/rectangle_32"
+            app:layout_constraintEnd_toEndOf="@+id/guide_right"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_31">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_remittance"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/tab_icon_write_gb_n"/>
+
+                <TextView
+                    android:id="@+id/tv_remittance"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:text="@string/tv_remittance"
+                    android:gravity="bottom"
+                    android:layout_marginTop="1dp"
+                    app:layout_constraintStart_toEndOf="@+id/icon_remittance"
+                    app:layout_constraintTop_toTopOf="@id/icon_remittance"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_remittance"
+                    android:textAppearance="@style/tv_remittance"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_recent"
+            android:layout_width="57dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/tv_recent"
+            android:textAppearance="@style/tv_my_daangn_small_title"
+            android:gravity="top"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_31"
+            android:layout_marginTop="27dp"/>
+
+        <View
+            android:id="@+id/rectangle_all"
+            android:layout_width="68dp"
+            android:layout_height="34dp"
+            android:background="@drawable/rectangle_33"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recent"
+            android:layout_marginTop="19dp"/>
+
+        <ImageView
+            android:id="@+id/icon_category"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/tab_icon_category_n"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_all"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="9dp"/>
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="24dp"
+            android:layout_height="15dp"
+            android:text="@string/tv_all"
+            android:textAppearance="@style/tv_all"
+            android:gravity="bottom"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            android:layout_marginLeft="33dp"
+            app:layout_constraintTop_toTopOf="@+id/icon_category"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_category"/>
+
+        <TextView
+            android:id="@+id/tv_my_exchange"
+            android:layout_width="57dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="26dp"
+            android:layout_alignParentTop="true"
+            android:text="@string/tv_my_exchange"
+            android:textAppearance="@style/tv_my_daangn_small_title"
+            android:gravity="top"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_all"/>
+
+        <ImageView
+            android:id="@+id/iv_feed_int"
+            android:layout_width="21dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_feed_interest_outline_18"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_exchange"
+            android:layout_marginTop="25dp"/>
+
+        <TextView
+            android:id="@+id/tv_favorite_category"
+            android:layout_width="100dp"
+            android:layout_height="18dp"
+            android:text="@string/tv_favorite_category"
+            android:textAppearance="@style/tv_my_exchange_inner"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/iv_feed_int"
+            app:layout_constraintTop_toTopOf="@+id/iv_feed_int"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_feed_int"
+            android:layout_marginLeft="12dp"/>
+
+        <ImageView
+            android:id="@+id/iv_sell_list"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/ic_community_outline_m"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_feed_int"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_sell_list"
+            android:layout_width="55dp"
+            android:layout_height="21dp"
+            android:text="@string/tv_sell_list"
+            android:textAppearance="@style/tv_my_exchange_inner"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/iv_sell_list"
+            app:layout_constraintTop_toTopOf="@+id/iv_sell_list"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sell_list"
+            android:layout_marginLeft="12dp"/>
+
+        <ImageView
+            android:id="@+id/iv_buy_list"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/ic_voucher_outline_m"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_sell_list"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_buy_list"
+            android:layout_width="55dp"
+            android:layout_height="21dp"
+            android:text="@string/tv_buy_list"
+            android:textAppearance="@style/tv_my_exchange_inner"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/iv_buy_list"
+            app:layout_constraintTop_toTopOf="@+id/iv_buy_list"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_buy_list"
+            android:layout_marginLeft="12dp"/>
+
+        <ImageView
+            android:id="@+id/iv_calculator"
+            android:layout_width="21dp"
+            android:layout_height="18dp"
+            android:src="@drawable/btn_favorite_text_for_post"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_buy_list"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_calculator"
+            android:layout_width="120dp"
+            android:layout_height="18dp"
+            android:text="@string/tv_calculator"
+            android:textAppearance="@style/tv_my_exchange_inner"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/iv_calculator"
+            app:layout_constraintTop_toTopOf="@+id/iv_calculator"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_calculator"
+            android:layout_marginLeft="12dp"/>
+
+        <View
+            android:id="@+id/line_11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_400"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_calculator"/>
+
+        <TextView
+            android:id="@+id/tv_my_surrounding_life"
+            android:layout_width="81dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_my_surrounding_life"
+            android:textAppearance="@style/tv_my_daangn_small_title"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            app:layout_constraintTop_toBottomOf="@+id/line_11"
+            android:gravity="top"/>
+
+        <ImageView
+            android:id="@+id/iv_surrounding_write"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_surrounding_life"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/ic_mydaangn_storyarticle_outline_24" />
+
+        <TextView
+            android:id="@+id/tv_surrounding_write"
+            android:layout_width="120dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dp"
+            android:text="@string/tv_surrounding_write"
+            android:textAppearance="@style/tv_my_exchange_inner"
+            app:layout_constraintStart_toEndOf="@+id/iv_surrounding_write"
+            app:layout_constraintBottom_toBottomOf="@id/iv_surrounding_write"
+            app:layout_constraintTop_toTopOf="@+id/iv_surrounding_write"
+            android:gravity="bottom"/>
+
+        <View
+            android:id="@+id/line_12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_400"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_surrounding_write"/>
+
+        <TextView
+            android:id="@+id/tv_surrounding_market"
+            android:layout_width="57dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/tv_surrounding_market"
+            android:textAppearance="@style/tv_my_daangn_small_title"
+            app:layout_constraintTop_toTopOf="@+id/line_12"
+            app:layout_constraintStart_toStartOf="@+id/guide_left"
+            android:layout_marginTop="19dp"
+            android:gravity="top"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -7,4 +7,24 @@
     <string name="menu_my">나의 당근</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_daangn_pay">당근하는 새로운 방법, 당근 페이!</string>
+    <string name="tv_charge">충전</string>
+    <string name="tv_remittance">계좌송금</string>
+    <string name="tv_recent">최근방문</string>
+    <string name="tv_all">전체</string>
+    <string name="tv_my_exchange">나의거래</string>
+    <string name="tv_favorite_category">관심거래</string>
+    <string name="tv_sell_list">구매목록</string>
+    <string name="tv_buy_list">판매목록</string>
+    <string name="tv_calculator">중고거래 가계부</string>
+    <string name="tv_my_surrounding_life">나의 동네생활</string>
+    <string name="tv_surrounding_write">동네생활 글/댓글</string>
+    <string name="tv_surrounding_market">동네 가게</string>
+    <string name="tv_bottom_bar_price">17,000원</string>
+    <string name="tv_write">글쓰기</string>
+    <string name="tv_bottom_bar_warning">가치 제안 불가</string>
+    <string name="tv_bottom_bar_chatting">채팅하기</string>
+
+
+
 </resources>
