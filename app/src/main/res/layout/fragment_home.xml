@@ -534,7 +534,7 @@
             android:layout_width="14dp"
             android:layout_height="14dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="15dp"
             android:layout_alignParentTop="true"
             app:layout_constraintStart_toStartOf="@+id/rectangle_23"
@@ -554,7 +554,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_write"
             android:gravity="bottom"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
