@@ -29,6 +29,17 @@ class StuffInfoActivity : AppCompatActivity() {
 
     private fun init(){
 
+        val data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra("Key",ProductInfo::class.java)
+        } else {
+            intent.getSerializableExtra("Key") as ProductInfo
+        } ?: ProductInfo(0,"null","null","null")
+
+        binding.ivItemThumbnailIn.setImageResource(data.productImage)
+        binding.tvBottomBarPrice.text = data.productPrice
+        binding.tvProductTitleIn.text = data.productTitle
+        binding.tvProductLocationIn.text = data.productLocation
+
         val text = "여기에 물건을 팔 때 텍스트가 입력됩니다.\n"
         val text2 = "여기는 두 번째 문단이 입력됩니다\n"
         var result = ""
@@ -47,12 +58,10 @@ class StuffInfoActivity : AppCompatActivity() {
     }
 
     private fun initStatusBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window = window
-            //window.statusBarColor = Color.BLUE
-            window.statusBarColor = Color.TRANSPARENT
+        val window = window
+        //window.statusBarColor = Color.BLUE
+        window.statusBarColor = Color.TRANSPARENT
 
-        }
     }
 
     private fun initScrollView(){
