@@ -37,4 +37,8 @@
     <string name="activity_notify_intro">노나노나님, 아직 당근마켓 새 이름을 모르시나요?</string>
     <string name="activity_notify_middle">새로워진 당근마켓의 OO을 알아보세요</string>
     <string name="activity_notify_date">6일전</string>
+    <string name="fragment_home_news">새소식</string>
+    <string name="fragment_home_introduce_function">더 편리해진 7가지 기능 개선을 소개해요!</string>
+    <string name="fragment_home_date">(2023 상반기)</string>
+    <string name="fragment_home_write">+ 글쓰기</string>
 </resources>

@@ -17,15 +17,17 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
+        parentFragmentManager.beginTransaction().replace(R.id.fl_stuff_info, HomeScrollFragment()).commit()
+
         // 기능 추가
-        binding.clItem1.setOnClickListener {
-            val intent = Intent(requireContext(), StuffInfoActivity::class.java) // ::은 리플렉션이라고 함 왜 .java붙음?
-            startActivity(intent)
-        }
-        binding.clItem2.setOnClickListener {
-            val intent = Intent(requireContext(), StuffInfoActivity::class.java) // ::은 리플렉션이라고 함 왜 .java붙음?
-            startActivity(intent)
-        }
+//        binding.clItem1.setOnClickListener {
+//            val intent = Intent(requireContext(), StuffInfoActivity::class.java) // ::은 리플렉션이라고 함 왜 .java붙음?
+//            startActivity(intent)
+//        }
+//        binding.clItem2.setOnClickListener {
+//            val intent = Intent(requireContext(), StuffInfoActivity::class.java) // ::은 리플렉션이라고 함 왜 .java붙음?
+//            startActivity(intent)
+//        }
 
         binding.ivHomeAlarm.setOnClickListener {
             val intent = Intent(requireContext(), AlarmActivity::class.java) // ::은 리플렉션이라고 함 왜 .java붙음?
