@@ -17,19 +17,20 @@ class ProductAdapter(val productList:ArrayList<MyProduct>)
     }
 
     //함수의 초기화를 진행하지 않았기 때문에 선언,외부에서 onItemClickListener를 받겠다.
+    //이걸 안해주면 null function - 실행했을 때 itemclicklistener에 대한 정보가 없기 때문에 프로그램 강제 종료.
     fun setOnItemClickListener(onItemClickListener: OnItemClickListener){
         //itemClickListener의 세터를 작성한다고 생각
         itemClickListener = onItemClickListener
     }
 
     //View Holder는 ItemView를 가지고 있고, 이것을 Binding하기 위해 ItemHomeProductBinding을 생성자로 받음.
-    //ItemHomeProductBinding은 무엇인가?
     inner class ViewHolder(val binding:ItemHomeProductBinding):RecyclerView.ViewHolder(binding.root){
         //onBindViewHolder의 코드를 간소화 하기위해 bind 함수 선언, myProduct라는 매개변수를 받음.
         fun bind(myProduct:MyProduct){
             binding.tvProductTitle.text = myProduct.producttitle
             binding.tvProductPrice.text = myProduct.productprice
             binding.tvProductRegion.text = myProduct.productregion
+            binding.tvProductTime.text = myProduct.producttime
             binding.tvProductComment.text = myProduct.productcomment
             binding.tvProductLike.text = myProduct.productlike
             binding.ivProductImage.setImageResource(myProduct.productimage)

@@ -25,11 +25,12 @@ class StuffInfoActivity : AppCompatActivity() {
             intent.getSerializableExtra("key",MyProduct::class.java)
         } else {
             intent.getSerializableExtra("key")as MyProduct
-        } ?: MyProduct("temp","temp","temp","temp","temp", R.drawable.app_icon_splash_logo) //null값이 들어올 경우 임시값으로 temp값들 넣어줌.
+        } ?: MyProduct("temp","temp", "temp","temp","temp","temp", R.drawable.app_icon_splash_logo) //null값이 들어올 경우 임시값으로 temp값들 넣어줌.
 
         //받은 데이터를 받은 클래스의 xml에 적용
         binding.tvSuffProductTitle.text = data.producttitle
         binding.tvSuffProductRegion.text = data.productregion
+        binding.tvSuffProductTime.text = data.producttime
         binding.tvSuffProductPrice.text = data.productprice
         binding.ivSuffProductImage.setImageResource(data.productimage)
 

@@ -85,6 +85,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/tv_suff_product_region"
                         android:autoSizeTextType="uniform"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -171,9 +172,9 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_suff_product_region"
+                        android:id="@+id/tv_suff_product_time"
                         android:layout_width="wrap_content"
-                        android:layout_height="15dp"
+                        android:layout_height="match_parent"
                         android:layout_marginEnd="5dp"
                         android:autoSizeTextType="uniform"
                         android:text="식품"
