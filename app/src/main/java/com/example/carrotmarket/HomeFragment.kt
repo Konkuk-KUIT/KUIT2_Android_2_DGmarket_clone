@@ -50,6 +50,7 @@ class HomeFragment : Fragment() {
         productAdapter = ProductAdapter(productList)
         binding.rvHomeProduct.adapter = productAdapter
         binding.rvHomeProduct.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL, false)
+        //requirecontext -> context : getContext()로 받아짐
 
         productAdapter!!.setOnItemClickListener(object : ProductAdapter.OnItemClickListener{
             override fun onItemClick(productInfo: ProductInfo) {
