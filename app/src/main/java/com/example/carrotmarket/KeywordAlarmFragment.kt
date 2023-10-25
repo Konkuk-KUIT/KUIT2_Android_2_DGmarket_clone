@@ -25,10 +25,19 @@ class KeywordAlarmFragment : Fragment() {
     ): View? {
         binding= FragmentKeywordAlarmBinding.inflate(layoutInflater,container,false)
 
-        binding.ivAlarmSelectActive.setOnClickListener {
+        /*binding.ivAlarmSelectActive.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.frm_alarm_list,ActiveAlarmFragment()).commit()
-        }
+        }*/
 
         return binding.root
     }
+
+    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initKeymordAlarm()
+    }
+
+    private fun initKeymordAlarm() {
+        TODO("Not yet implemented")
+    }*/
 }
