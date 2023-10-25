@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager2.widget.ViewPager2
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 
 class StuffInfoActivity : AppCompatActivity() {
     lateinit var binding: ActivityStuffInfoBinding
+    var imgList = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityStuffInfoBinding.inflate(layoutInflater)
@@ -26,7 +28,21 @@ class StuffInfoActivity : AppCompatActivity() {
             intent.getSerializableExtra("key")as ProductInfo
         }?:ProductInfo(1,"와우","밍","잘못구현?",2,3)
 
+        initDummyData()
+        initViewPager()
+
     }
+
+    private fun initViewPager() {
+        binding.imageAreaVp.adapter=ImageSlideVPAdapter(applicationContext,imgList)
+        binding.imageAreaVp.orientation=ViewPager2.ORIENTATION_HORIZONTAL
+    }
+
+    private fun initDummyData() {
+        imgList.add("https://cdn.pixabay.com/photo/2018/05/01/18/21/eclair-3366430_1280.jpg")
+        imgList.add("https://cdn.pixabay.com/photo/2017/05/04/21/23/cupcakes-2285209_1280.jpg")
+    }
+
     private fun initView(data: String?) {
         if (data == null) {
             finish()

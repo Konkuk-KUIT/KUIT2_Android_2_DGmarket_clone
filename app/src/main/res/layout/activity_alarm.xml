@@ -40,32 +40,24 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/main_tb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar"
-        android:padding="15dp"
-        tools:ignore="MissingConstraints">
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorFullWidth="true"
+        app:tabRippleColor="#BDBDBD"
+        app:tabTextColor="@color/black"/>
 
-       <ImageView
-           android:id="@+id/profile"
-           android:layout_width="40dp"
-           android:layout_height="40dp"
-           android:src="@drawable/ic_check_circle_button_checked_24"
-           app:layout_constraintTop_toTopOf="parent"
-           />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/profile"
-            android:layout_marginStart="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="15dp"
-            android:text="노나니나노님, 아직 당근마켓 새 이름을 모르시나요?👀"
-            android:textStyle="bold"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tb"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
