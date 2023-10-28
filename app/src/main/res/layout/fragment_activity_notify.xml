@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_activity_notify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            
+            <TextView
+                android:id="@+id/tv_notify_text_intro_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"/>
+            
+            <TextView
+                android:id="@+id/tv_notify_text_middle_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_1"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_2"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_2"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_2"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_3"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_4"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_4"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_4"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_4"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_4"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_5"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_5"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_5"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_5"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_5"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_6"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_6"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_6"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_6"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_stuff_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_stuff_6"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_stuff_7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_smb_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_intro_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_intro"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_middle_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_middle"
+                android:textSize="15sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_7"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_intro_7"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_notify_text_date_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_notify_date"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_stuff_7"
+                app:layout_constraintTop_toBottomOf="@id/tv_notify_text_middle_7"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
