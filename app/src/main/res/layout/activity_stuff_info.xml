@@ -22,24 +22,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_suff_product_image"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/suff_product_image_vp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/image"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/cl_profile_box"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_profile_box"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_suff_product_image">
+                app:layout_constraintBottom_toTopOf="@id/line">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/iv_user_profile"
@@ -93,7 +89,6 @@
 
                 </LinearLayout>
 
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +136,7 @@
                 android:background="#d3d3d3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cl_profile_box" />
+                app:layout_constraintBottom_toTopOf="@id/tv_item_home_contents_2" />
 
             <LinearLayout
                 android:id="@+id/tv_item_home_contents_2"
@@ -152,6 +147,7 @@
                 android:layout_marginTop="25dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/cl_profile_box"
+                app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="16dp">
 
                 <TextView

@@ -35,6 +35,7 @@ class ProductAdapter(val productList:ArrayList<MyProduct>)
             binding.tvProductLike.text = myProduct.productlike
             binding.ivProductImage.setImageResource(myProduct.productimage)
 
+
             itemView.setOnClickListener{
                 itemClickListener.onItemClick(myProduct)
             }

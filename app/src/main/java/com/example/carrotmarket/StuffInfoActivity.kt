@@ -4,16 +4,28 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.viewpager2.widget.ViewPager2
 import com.example.carrotmarket.databinding.ActivityMainBinding
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 
 class StuffInfoActivity : AppCompatActivity() {
     //View binding 적용
     lateinit var binding : ActivityStuffInfoBinding
+    //suff_product_image에 들어갈 데이터 선언
+    private val suff_product_imgList = mutableListOf<String>()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStuffInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initSuffProductImageDummyData()
+
+        //뷰페이저 설정
+        initSuffProductViewPager()
+
         //기능 추가
         //뒤로 가기 아이콘 선택하면 HomeFragment 페이지로 넘어가도록 설정
         binding.tvInfoPreviousArrow.setOnClickListener {
@@ -32,7 +44,23 @@ class StuffInfoActivity : AppCompatActivity() {
         binding.tvSuffProductRegion.text = data.productregion
         binding.tvSuffProductTime.text = data.producttime
         binding.tvSuffProductPrice.text = data.productprice
-        binding.ivSuffProductImage.setImageResource(data.productimage)
+        //suff_product_imgList.add(data.productimage.toString())
+        suff_product_imgList[0] = data.productimage.toString()
+        //binding.suffProductImageVp.setImageResource(data.productimage)
+    }
 
+    private fun initSuffProductViewPager() {
+        binding.suffProductImageVp.adapter = SuffProductImgSliderVPAdapter(applicationContext, suff_product_imgList)
+
+        //가로로 스와이프(기본값은 세로)
+        binding.suffProductImageVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+    }
+
+    private fun initSuffProductImageDummyData() {
+        suff_product_imgList.add("https://m.jejuttam.com/web/product/big/202112/0d265ea52adea6eca3da9aa034c4f5ae.jpg")
+        suff_product_imgList.add("https://m.haepoom.com/web/product/big/202211/421855678ac23ada9fb888c7fd311fbf.png")
+        suff_product_imgList.add("https://www.jicexpo.com/images/client/jicexpo/mainAllExpo.png")
+        suff_product_imgList.add("https://www.jejuilbo.net/news/photo/202001/137397_86036_4628.jpg")
+        suff_product_imgList.add("https://m.ddingdongjeju.com/web/product/medium/202012/304087aafb2a1f89fe401cb71883c741.jpg")
     }
 }
