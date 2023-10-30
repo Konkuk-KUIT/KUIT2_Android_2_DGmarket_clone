@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
+import android.os.Handler
+import android.util.Log
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.viewpager2.widget.ViewPager2
 import com.example.carrotmarket.databinding.ActivityMainBinding
@@ -15,6 +18,11 @@ class StuffInfoActivity : AppCompatActivity() {
     //suff_product_image에 들어갈 데이터 선언
     private val suff_product_imgList = mutableListOf<String>()
 
+    //핸들러
+    private val pagerHandler = Handler(Looper.getMainLooper())
+
+    //이미지를 자동으로 넘겨주는 Swiper
+    private val imageSwiper = ImageSwiper()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +33,9 @@ class StuffInfoActivity : AppCompatActivity() {
 
         //뷰페이저 설정
         initSuffProductViewPager()
+
+        //이미지 스와이퍼
+        imageSwiper.start()
 
         //기능 추가
         //뒤로 가기 아이콘 선택하면 HomeFragment 페이지로 넘어가도록 설정
@@ -44,9 +55,37 @@ class StuffInfoActivity : AppCompatActivity() {
         binding.tvSuffProductRegion.text = data.productregion
         binding.tvSuffProductTime.text = data.producttime
         binding.tvSuffProductPrice.text = data.productprice
-        //suff_product_imgList.add(data.productimage.toString())
-        suff_product_imgList[0] = data.productimage.toString()
-        //binding.suffProductImageVp.setImageResource(data.productimage)
+
+        //suff_product_imgList[0] = data.productimage.toString()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        imageSwiper.interrupt()
+    }
+
+    inner class ImageSwiper : Thread(){
+        override fun run() {
+            try {
+                while(true){
+                    sleep(1000)
+                    pagerHandler.post{
+                        var position = binding.suffProductImageVp.currentItem
+                        if(position == 4){
+                            position = 0
+                        }else{
+                            position++
+                        }
+                        binding.suffProductImageVp.currentItem = position
+                    }
+                }
+            }catch (e:InterruptedException){
+                Log.d("INTERRUPT", "스레드 종료")
+                interrupt()
+            }
+        }
+
+
     }
 
     private fun initSuffProductViewPager() {
