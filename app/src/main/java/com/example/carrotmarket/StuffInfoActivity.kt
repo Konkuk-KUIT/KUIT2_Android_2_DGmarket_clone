@@ -3,16 +3,23 @@ package com.example.carrotmarket
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide.init
 import com.example.carrotmarket.databinding.ActivityStuffinfoBinding
 
 
 class StuffInfoActivity : AppCompatActivity() {
     private lateinit var binding : ActivityStuffinfoBinding
     private val imgList = mutableListOf<String>()
+
+    private val pagerHandler = Handler(Looper.getMainLooper())
+    private val imageSwiper = ImageSwiper()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityStuffinfoBinding.inflate(layoutInflater)
@@ -28,7 +35,39 @@ class StuffInfoActivity : AppCompatActivity() {
         binding.ivBackHome.setOnClickListener{
             finish()
         }
+
+        imageSwiper.start()
+        //start는 thread 생성(멀티 쓰레드), run은 thread 실행(싱글 쓰레드)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        imageSwiper.interrupt()
+    }
+
+    inner class ImageSwiper(): Thread() {
+        override fun run() {
+            try{
+                while(true){
+                    sleep(3000)
+                    pagerHandler.post{
+                        var position = binding.vpThumbnailIn.currentItem
+                        if(position == 7){
+                            position = 0
+                        }else{
+                            position++
+                        }
+                        binding.vpThumbnailIn.currentItem = position
+                    }
+                }
+
+            }catch (e : InterruptedException){
+                Log.e("INTERRUPT", "쓰레드 종료")
+            }
+        }
+
+    }
+
 
     private fun initViewPager() {
         binding.vpThumbnailIn.adapter = StuffInfoVPAdapter(applicationContext,imgList)
