@@ -69,7 +69,7 @@ class StuffInfoActivity : AppCompatActivity() {
             try {
                 while(true){
                     sleep(1000)
-                    pagerHandler.post{
+                    pagerHandler.post{  //new runnable
                         var position = binding.suffProductImageVp.currentItem
                         if(position == 4){
                             position = 0
