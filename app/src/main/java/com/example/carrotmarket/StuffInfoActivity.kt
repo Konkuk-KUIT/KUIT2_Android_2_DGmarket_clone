@@ -3,6 +3,8 @@ package com.example.carrotmarket
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
@@ -10,6 +12,9 @@ import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 class StuffInfoActivity : AppCompatActivity() {
     lateinit var binding : ActivityStuffInfoBinding
     private val imgList = mutableListOf<String>()
+    private val imageSwiper = ImageSwiper()
+    private val paperHandler = Handler(Looper.getMainLooper())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityStuffInfoBinding.inflate(layoutInflater)
@@ -17,6 +22,7 @@ class StuffInfoActivity : AppCompatActivity() {
 
         initDummyData()
         initViewPager()
+        imageSwiper.start()
 
         val data= if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getSerializableExtra("Key",Transaction::class.java)
@@ -32,6 +38,33 @@ class StuffInfoActivity : AppCompatActivity() {
 
         binding.ivStuffBack.setOnClickListener {
             finish()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        imageSwiper.interrupt()
+    }
+
+    inner class ImageSwiper : Thread() {
+        override fun run() {
+            while(true) {
+                try {
+                    sleep(2000)
+                    paperHandler.post { //runnable
+                        var position = binding.detailViewVp.currentItem
+                        if(position==2){
+                            position=0
+                        } else{
+                            position++
+                        }
+                        binding.detailViewVp.currentItem=position
+                    }
+                }catch (e : InterruptedException){
+                    Log.d("INTERRUPT!","THREAD IS DESTROYED.")
+                    interrupt()
+                }
+            }
         }
     }
 

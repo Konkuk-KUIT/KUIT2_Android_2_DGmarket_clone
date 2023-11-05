@@ -57,8 +57,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_alarm_topbar"
-        app:tabIndicatorAnimationMode="linear"
-        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="#00FF00"
         app:tabIndicatorFullWidth="true"
         app:tabRippleColor="@color/gray_600"
         app:tabTextColor="@color/black"/>
