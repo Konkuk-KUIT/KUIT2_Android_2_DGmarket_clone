@@ -1,9 +1,9 @@
 package com.example.carrotmarket
 
-import android.graphics.drawable.Drawable
-import android.icu.number.IntegerWidth
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
-
+@Entity(tableName = "MyProductTable")
 data class MyProduct(
     val producttitle:String,
     val productregion:String,
@@ -12,4 +12,7 @@ data class MyProduct(
     val productcomment:String,
     val productlike:String,
     val productimage: Int
-):Serializable
+):Serializable{
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = 0
+}

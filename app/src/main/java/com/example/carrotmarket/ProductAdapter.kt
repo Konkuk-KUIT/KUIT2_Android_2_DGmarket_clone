@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val productList:ArrayList<MyProduct>)
+class ProductAdapter(var productList:ArrayList<MyProduct>)
     :RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     //OnItemClickLister라는 타입의 itemClickListener라는 프로퍼티 선언
@@ -13,7 +13,7 @@ class ProductAdapter(val productList:ArrayList<MyProduct>)
 
     //interface에선 추상메소드 구현 가능, 즉, adapter에서 메소드를 명시만 해놓음.
     interface OnItemClickListener{
-        fun onItemClick(myProduct: MyProduct)
+        fun onItemClick(myProductEntity: MyProduct)
     }
 
     //함수의 초기화를 진행하지 않았기 때문에 선언,외부에서 onItemClickListener를 받겠다.
@@ -26,18 +26,18 @@ class ProductAdapter(val productList:ArrayList<MyProduct>)
     //View Holder는 ItemView를 가지고 있고, 이것을 Binding하기 위해 ItemHomeProductBinding을 생성자로 받음.
     inner class ViewHolder(val binding:ItemHomeProductBinding):RecyclerView.ViewHolder(binding.root){
         //onBindViewHolder의 코드를 간소화 하기위해 bind 함수 선언, myProduct라는 매개변수를 받음.
-        fun bind(myProduct:MyProduct){
-            binding.tvProductTitle.text = myProduct.producttitle
-            binding.tvProductPrice.text = myProduct.productprice
-            binding.tvProductRegion.text = myProduct.productregion
-            binding.tvProductTime.text = myProduct.producttime
-            binding.tvProductComment.text = myProduct.productcomment
-            binding.tvProductLike.text = myProduct.productlike
-            binding.ivProductImage.setImageResource(myProduct.productimage)
+        fun bind(myProductEntity:MyProduct){
+            binding.tvProductTitle.text = myProductEntity.producttitle
+            binding.tvProductPrice.text = myProductEntity.productprice
+            binding.tvProductRegion.text = myProductEntity.productregion
+            binding.tvProductTime.text = myProductEntity.producttime
+            binding.tvProductComment.text = myProductEntity.productcomment
+            binding.tvProductLike.text = myProductEntity.productlike
+            binding.ivProductImage.setImageResource(myProductEntity.productimage)
 
 
             itemView.setOnClickListener{
-                itemClickListener.onItemClick(myProduct)
+                itemClickListener.onItemClick(myProductEntity)
             }
         }
     }
@@ -56,6 +56,11 @@ class ProductAdapter(val productList:ArrayList<MyProduct>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //이미 bind라는 함수를 통해 어느정도 할 일 명시, bind 호출
         holder.bind(productList[position])
+    }
+
+    fun setData(list: List<MyProduct>) {
+        productList.addAll(list) // 새로운 데이터 추가
+        notifyDataSetChanged() // 데이터 변경을 알림
     }
 
 

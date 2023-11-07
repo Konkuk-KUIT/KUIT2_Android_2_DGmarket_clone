@@ -5,17 +5,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.carrotmarket.databinding.FragmentHomeBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
 
     //프로퍼티로 productlist 만듦
-    private var productList:ArrayList<MyProduct> = arrayListOf()
+    var productList:ArrayList<MyProduct> = arrayListOf()
+
+    //DB 객체 만듦
+    var myProducrDatabase : MyProductDatabase ?= null
 
     //만든 ProductAdapter 활용
     private var productAdapter:ProductAdapter?=null
@@ -33,14 +38,34 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        //Homefragment의 Product(데이터)를 구성하는 함수
-        initProduct()
+        //데이터베이스 가져오기
+        myProducrDatabase = MyProductDatabase.getInstance(requireContext())
+        return binding.root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        CoroutineScope(Dispatchers.IO).launch {
+                //Homefragment의 Product(데이터)를 구성하는 함수
+                initProduct()
+                val products = myProducrDatabase!!.getMyProductDAO().getMyProducts()
+
+                val arrList = arrayListOf<MyProduct>()
+                arrList.addAll(myProducrDatabase!!.getMyProductDAO().getMyProducts())
+                productList = arrList
+
+                withContext(Dispatchers.Main){
+                    (binding.rvProduct.adapter as ProductAdapter).setData(products)
+                }
+
+        }
         //ProductAdapter에 대한 작업
         initRecyclerView()
-
-        return binding.root
     }
+
+
 
     private fun initRecyclerView() {
         productAdapter = ProductAdapter(productList)
@@ -53,11 +78,11 @@ class HomeFragment : Fragment() {
 
         //productAdapter에 setOnItemClickListener 호출
         productAdapter!!.setOnItemClickListener(object :ProductAdapter.OnItemClickListener{
-            override fun onItemClick(myProduct: MyProduct) {
+            override fun onItemClick(myProductEntity: MyProduct) {
                 //item 클릭했을 때 상세화면으로 전환
                 val intent = Intent(requireContext(), StuffInfoActivity::class.java)
                 //상세 product에 대한 데이터 전송
-                intent.putExtra("key",myProduct)
+                intent.putExtra("key",myProductEntity)
                 startActivity(intent)
             }
         })

@@ -1,15 +1,12 @@
 package com.example.carrotmarket
 
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.os.Handler
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.viewpager2.widget.ViewPager2
-import com.example.carrotmarket.databinding.ActivityMainBinding
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 
 class StuffInfoActivity : AppCompatActivity() {
