@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.carrotmarket.databinding.FragmentHomeBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -51,10 +52,6 @@ class HomeFragment : Fragment() {
                 //Homefragment의 Product(데이터)를 구성하는 함수
                 initProduct()
                 val products = myProducrDatabase!!.getMyProductDAO().getMyProducts()
-
-                val arrList = arrayListOf<MyProduct>()
-                arrList.addAll(myProducrDatabase!!.getMyProductDAO().getMyProducts())
-                productList = arrList
 
                 withContext(Dispatchers.Main){
                     (binding.rvProduct.adapter as ProductAdapter).setData(products)
