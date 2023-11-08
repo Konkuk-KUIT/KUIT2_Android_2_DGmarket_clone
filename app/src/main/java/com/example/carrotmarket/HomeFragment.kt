@@ -73,18 +73,10 @@ class HomeFragment : Fragment() {
         })
     }
 
-    // TODO: 각자 구성한 데이터 클래스에 맞게 더미 데이터를 구성해보기
+    //리사이클러뷰에 데이터(리스트) 추가하기
     private fun initDummyData() {
-        productList.addAll(
-            arrayListOf(
-                Product(1,"컴퓨터","송민서","20만원",13),
-                Product(1,"컴퓨터","송민서","20만원",13),
-                Product(1,"컴퓨터","송민서","20만원",13),
-                Product(1,"컴퓨터","송민서","20만원",13),
-                Product(1,"컴퓨터","송민서","20만원",13),
-                Product(1,"컴퓨터","송민서","20만원",13)
-            )
+        productDB!!.getProductDAO().addProduct(
+            Product(1,"컴퓨터","송민서","20만원",13)
         )
     }
-
 }
