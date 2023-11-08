@@ -29,10 +29,10 @@ class StuffInfoActivity : AppCompatActivity() {
         //  챌린지 미션: Serializable로 받아온 Data class를 이용해보기
         // val data = ???
         val data=if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.TIRAMISU){
-            intent.getSerializableExtra("key",ProductInfo::class.java)
+            intent.getSerializableExtra("key",Product::class.java)
         }else{
-            intent.getSerializableExtra("key")as ProductInfo
-        }?:ProductInfo(1,"와우","밍","잘못구현?",2,3)
+            intent.getSerializableExtra("key")as Product
+        }?:Product(1,"와우","밍","잘못구현?",2)
 
         initDummyData()
         initViewPager()

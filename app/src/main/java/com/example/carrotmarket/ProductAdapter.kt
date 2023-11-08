@@ -4,14 +4,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val productList: ArrayList<ProductInfo>) :
+class ProductAdapter(val productList: ArrayList<Product>) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     private lateinit var itemClickListener: OnItemClickListener
 
     // TODO: 인터페이스에서 제공하는 추상 메서드는 무엇이 있을까요?
     interface OnItemClickListener {
-        fun onItemClick(productInfo: ProductInfo)
+        fun onItemClick(Product: Product)
     }
 
     fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
@@ -23,14 +23,13 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) :
     */
     inner class ViewHolder(val binding: ItemHomeProductBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(productInfo: ProductInfo) {
-            // TODO: item_home_product.xml 에 작성한 View와 productInfo 클래스와 binding 시키기
+        fun bind(Product: Product) {
+            //여기 모르겠어 ㅠ
 
 
-
-            // TODO: 클릭 이벤트를 구현하기 위해서 어떤 코드를 작성해야 할까요?
-
-
+            itemView.setOnClickListener{
+                itemClickListener.onItemClick(Product)
+            }
         }
     }
 
@@ -50,5 +49,9 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) :
         binding.clItem.setOnClickListener{
             itemClickListener.onItemClick(productList[position])
         }
+    }
+    fun setData(list: List<Product>){
+        productList.addAll(list)
+        notifyDataSetChanged()
     }
 }
