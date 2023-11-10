@@ -5,15 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val transList: ArrayList<Transaction>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class ProductAdapter(var transList: ArrayList<ProductInfoEntity>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     private lateinit var itemClickListener: OnItemClickListener
     interface OnItemClickListener{
-        fun onItemClick(myTrans: Transaction)
+        fun onItemClick(myTrans: ProductInfoEntity)
     }
 
     inner class ViewHolder(val binding: ItemHomeProductBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(myTrans: Transaction){
+        fun bind(myTrans: ProductInfoEntity){
             binding.ivItemHomeThumnail.setImageResource(myTrans.trans_img)
             binding.tvItemHomeTitle.text=myTrans.trans_title
             binding.tvItemHomePos.text=myTrans.trans_pos
@@ -40,5 +40,10 @@ class ProductAdapter(val transList: ArrayList<Transaction>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(transList[position])
+    }
+
+    fun setData(list : ArrayList<ProductInfoEntity>) {
+        transList = list
+        notifyDataSetChanged()
     }
 }

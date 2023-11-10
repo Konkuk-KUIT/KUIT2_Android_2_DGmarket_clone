@@ -25,10 +25,10 @@ class StuffInfoActivity : AppCompatActivity() {
         imageSwiper.start()
 
         val data= if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getSerializableExtra("Key",Transaction::class.java)
+            intent.getSerializableExtra("Key",ProductInfoEntity::class.java)
         } else {
-            intent.getSerializableExtra("Key") as Transaction
-        } ?: Transaction(R.drawable.icon_warning_gray,"제목 없음","-1초전","버뮤다","-10,000원",0,0)
+            intent.getSerializableExtra("Key") as ProductInfoEntity
+        } ?: ProductInfoEntity(R.drawable.icon_warning_gray,"제목 없음","-1초전","버뮤다","-10,000원",0,0)
 
         //binding.itemDetailIv.setImageResource(data.trans_img)
         binding.tvItemInfoTitle.text=data.trans_title

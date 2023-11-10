@@ -1,8 +1,11 @@
 package com.example.carrotmarket
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
-data class Transaction(
+@Entity(tableName = "ProductInfoTable")
+data class ProductInfoEntity(
     val trans_img : Int,
     val trans_title : String,
     val trans_timeline : String,
@@ -10,4 +13,7 @@ data class Transaction(
     val trans_price : String,
     val trans_like_count : Int,
     val trans_comment_count : Int
-) : Serializable
+) : Serializable {
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = 0
+}
