@@ -6,16 +6,16 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val productList: ArrayList<ProductInfo>):
+class ProductAdapter(var productList: List<ProductEntity>):
     RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
 
     private lateinit var itemClickListener: OnItemClickListener
 
     interface OnItemClickListener{
-        fun onItemClick(productInfo: ProductInfo)
+        fun onItemClick(productInfo: ProductEntity)
     }
     inner class ViewHolder(val binding: ItemHomeProductBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(productInfo: ProductInfo){
+        fun bind(productInfo: ProductEntity){
             binding.ivItemThumbnail.setImageResource(productInfo.productImage)
             binding.tvProductPrice.text = productInfo.productPrice
             binding.tvProductTitle.text = productInfo.productTitle
@@ -39,4 +39,9 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>):
     }
 
     override fun getItemCount(): Int = productList.size
+
+    fun setData(list : List<ProductEntity>){
+        productList = list
+        notifyDataSetChanged()
+    }
 }

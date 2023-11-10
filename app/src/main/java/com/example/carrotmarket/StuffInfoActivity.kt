@@ -89,10 +89,10 @@ class StuffInfoActivity : AppCompatActivity() {
     private fun init(){
 
         val data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getSerializableExtra("Key",ProductInfo::class.java)
+            intent.getSerializableExtra("Key",ProductEntity::class.java)
         } else {
-            intent.getSerializableExtra("Key") as ProductInfo
-        } ?: ProductInfo(0,"null","null","null")
+            intent.getSerializableExtra("Key") as ProductEntity
+        } ?: ProductEntity(0,"null","null","null")
 
         binding.tvBottomBarPrice.text = data.productPrice
         binding.tvProductTitleIn.text = data.productTitle
