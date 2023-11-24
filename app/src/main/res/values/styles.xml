@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- styles.xml -->
+    <style name="tv_profile">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="tv_daangn_pay">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="tv_charge">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontFamily">@font/interbold</item>
+    </style>
+    <style name="tv_remittance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontFamily">@font/interbold</item>
+    </style>
+    <style name="tv_my_daangn_small_title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontFamily">@font/interbold</item>
+    </style>
+    <style name="tv_my_exchange_inner">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="tv_all">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="tv_write">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFEFC</item>
+    </style>
+    <style name="tv_bottom_bar_price">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/interbold</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="tv_bottom_bar_warning">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#8A8E97</item>
+    </style>
+    <style name="tv_bottom_bar_chatting">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFF9F2</item>
+    </style>
+</resources>
