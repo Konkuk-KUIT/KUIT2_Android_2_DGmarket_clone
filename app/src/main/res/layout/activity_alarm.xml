@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/backbutton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="알림"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/backBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="편집"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/tab_choice"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/top_bar"-->
+<!--        android:layout_margin="10dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tab1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="활동 알림"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/tab2"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tab2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="키워드 알림"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/tab1"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/alarm_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorFullWidth="false"
+        app:tabRippleColor="#AAAFFF"
+        app:tabTextColor="@color/black"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/alarm_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alarm_tb"
+
+
+        />
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tab_choice"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="0dp">-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm1text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg1"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm1text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg1"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm1text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg1"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm1text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm1"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm2text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg2"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm2text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg2"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm2text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg2"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm2text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm2"-->
+<!--                android:padding="10dp"-->
+<!--                android:layout_marginLeft="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm3text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg3"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm3text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg3"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm3text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg3"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm3text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm3"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm4text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg4"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm4text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg4"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm4text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg4"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm4text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm5"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm4"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm5text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg5"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm5text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg5"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm5text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg5"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm5text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm6"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm5"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm6text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg6"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm6text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg6"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm6text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg6"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm6text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm7"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm6"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm7text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg7"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm7text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg7"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm7text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg7"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm7text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm8"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm7"-->
+<!--                android:padding="10dp"-->
+<!--                android:layout_marginLeft="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg8"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/icon_watch_s"-->
+<!--                        android:scaleType="fitCenter"/>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm8text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxWidth="240dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="💌유진님이 보낸 소중한 거래후기가 도착했어요!"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/alarmImg8"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm8text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="후기를 확인해보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg8"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm8text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg8"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm8text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm9"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm8"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg9"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm9text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg9"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm9text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg9"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm9text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg9"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm9text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/alarm10"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/alarm8"-->
+<!--                android:padding="10dp">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/alarmImg10"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="1000dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:src="@drawable/app_icon_splash" />-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm10text1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="유리님, 소은님과의 거래는 어떠셨나요?"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg10"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/alarm10text2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="여기를 눌러 거래 후기를 남겨보세요!"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg10"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm10text1" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="8시간 전"-->
+<!--                    android:textColor="@color/gray_400"-->
+<!--                    android:textSize="10sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/alarmImg10"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/alarm10text2" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--    </ScrollView>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
