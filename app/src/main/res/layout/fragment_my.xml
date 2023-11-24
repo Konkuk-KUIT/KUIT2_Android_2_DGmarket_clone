@@ -45,9 +45,10 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
+            android:id="@+id/tv_login_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="니나노니나"
+            android:text="로그인을 해주세요"
             android:fontFamily="@font/interbold"
             android:textSize="18sp"
             android:textColor="@color/black"
@@ -57,7 +58,7 @@
             android:layout_marginStart="11dp"/>
 
         <RelativeLayout
-            android:id="@+id/frame_64"
+            android:id="@+id/login_btn"
             android:layout_width="80dp"
             android:layout_height="29dp"
             android:clipToOutline="true"
@@ -68,13 +69,23 @@
             app:layout_constraintEnd_toEndOf="@+id/guide_right">
 
             <TextView
-                android:id="@+id/tv_profile"
-                android:layout_width="54dp"
-                android:layout_height="13dp"
-                android:text="프로필 보기"
+                android:id="@+id/tv_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="로그인"
                 android:fontFamily="@font/interbold"
                 android:textAppearance="@style/tv_profile"
-                android:gravity="top"/>
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="로그아웃"
+                android:fontFamily="@font/interbold"
+                android:textAppearance="@style/tv_profile"
+                android:visibility="gone"
+                android:gravity="center"/>
 
         </RelativeLayout>
 
